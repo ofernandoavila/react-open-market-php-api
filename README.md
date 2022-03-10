@@ -21,7 +21,7 @@ define('URLROOT', 'http://URL_ROOT_OF_API.com');
 
 ## Add new routes
 
-Add new routes is very simple, just need to use the variable `$router`, followed by the HTTP method and add a function as a parameter. This function is a callback and will return the data back to your application. E.g.:
+Add new routes is very simple, just need to use the variable `$router`, followed by the HTTP method and add a function as a parameter. This function is a callback and will return the data back to your application. e.g.:
 
 ```php
 //Used for get method
@@ -35,7 +35,7 @@ The parameters passed by your application is easily found in the globals variabl
 
 ## Uploading files
 
-To configure the uploader class is very simple, in  the `libraries/` folder, there is a file called `Uploader.php`, in the construct you can set up the directory where the files is going to be uploaded. E.g.:
+To configure the uploader class is very simple, in  the `libraries/` folder, there is a file called `Uploader.php`, in the construct you can set up the directory where the files is going to be uploaded. e.g.:
 
 ```php
 class Uploader {
@@ -44,7 +44,7 @@ class Uploader {
         $this->uploadPath = 'images/';
     }
 ```
-The name of the file will be hash avoiding security problems. To upload the file, use the function `uploadFile()` passing a `$_FILE` as a parameter. E.g.:
+The name of the file will be hash avoiding security problems. To upload the file, use the function `uploadFile()` passing a `$_FILE` as a parameter. e.g.:
 
 ```php
 $router->post('/upload-file', function() {
@@ -57,7 +57,7 @@ $router->post('/upload-file', function() {
 
 ## Creating new models
 
-New classes can be create in the `model` folder and be call anytime. Is recommended to add a database instance to a local variable inside the `__construct` function. E.g.:
+New classes can be create in the `model` folder and be call anytime. Is recommended to add a database instance to a local variable inside the `__construct` function. e.g.:
 
 ```php
 class NewClassName {
