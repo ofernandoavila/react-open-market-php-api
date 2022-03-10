@@ -1,2 +1,5 @@
 .vscode/
 images/
+my-configs.php
+
+model/Category.php

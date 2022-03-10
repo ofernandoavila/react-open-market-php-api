@@ -1,9 +1,9 @@
 <?php
 
-define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
+define('DB_HOST', '');
+define('DB_USER', '');
 define('DB_PASS', '');
-define('DB_NAME', 'ecommerce');
+define('DB_NAME', '');
 
-define('URLROOT', 'http://localhost/api-php');
-define('IMAGE_DIR', 'http://localhost/api-php/images/');
+define('URLROOT', '');
+define('IMAGE_DIR', '');
