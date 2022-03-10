@@ -1,10 +1,9 @@
 <?php
 
-require_once 'core/Core.php';
-require_once 'core/Route.php';
-require_once 'libraries/Database.php';
-
-define('DB_HOST', '');
-define('DB_USER', '');
+define('DB_HOST', 'localhost');
+define('DB_USER', 'root');
 define('DB_PASS', '');
-define('DB_NAME', '');
+define('DB_NAME', 'ecommerce');
+
+define('URLROOT', 'http://localhost/api-php');
+define('IMAGE_DIR', 'http://localhost/api-php/images/');

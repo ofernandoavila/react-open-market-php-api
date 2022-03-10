@@ -7,7 +7,7 @@ class Core {
     public $route;
     
     public function __construct() {
-        $teste = $this->getCurrentRoute();
+        $this->setHeaders();
         $this->route = new Route();
     }
 
@@ -34,11 +34,13 @@ class Core {
     private function getCurrentRoute($MODE = '') {
         $direcao = rtrim($_SERVER['REQUEST_URI'], '/');
         $direcao = filter_var($_SERVER['REQUEST_URI'], FILTER_SANITIZE_URL);
-        $direcao = explode('/', $direcao);
+        $direcao = explode('?', $direcao);
+        $direcao = explode('/', $direcao[0]);
         $novaDirecao = array();
         array_shift($direcao);
         array_shift($direcao);
         
+
         foreach ($direcao as $key => $value) {
             if(sizeof($direcao) < 2 && $value == "") {
                 array_push($novaDirecao, "/");
@@ -53,7 +55,7 @@ class Core {
             return $novaDirecao;
         }
 
-        return implode('', $novaDirecao);;
+        return implode('', $novaDirecao);
     }
 
     public function start() {
@@ -72,7 +74,8 @@ class Core {
             header("HTTP/1.1 404 Not Found");
             $response = array(
                 "status" => 404,
-                "data" => '404: Page not found!'
+                "data" => '404: Page not found!',
+                "signature" => 'api-php'
             );
         
             echo json_encode($response);
@@ -91,5 +94,10 @@ class Core {
             echo "Method: " . $value['method'] . '<br>';
             echo '<br>';
         }
+    }
+
+    public function setHeaders() {
+        header("Access-Control-Allow-Origin: *");
+        header('Content-Type: application/json; charset=utf-8');
     }
 }
